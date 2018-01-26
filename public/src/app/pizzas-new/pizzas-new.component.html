@@ -1,0 +1,12 @@
+<fieldset>
+	<legend>MAMA MEANZZA PIZZA</legend>
+	<form (submit)='submitPizza()'>
+		<p>
+			Price:<input type="text" name="price" [(ngModel)]="newPizza.price">
+		</p>
+		<p>
+			Toppings:<input type="text" name="toppings" [(ngModel)]="newPizza.toppings">
+		</p>
+		<input type="submit" name="">
+	</form>
+</fieldset>
