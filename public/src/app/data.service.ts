@@ -4,7 +4,11 @@ import { BehaviorSubject } from 'rxjs';
 
 @Injectable()
 export class DataService {
+
   pizzasData: BehaviorSubject<any[]> = new BehaviorSubject([]);
+
+  singlePizzaData: BehaviorSubject<object> = new BehaviorSubject({});
+
   constructor(private _http: HttpClient) { 
   	this.getAllPizzas();
   }
@@ -24,4 +28,18 @@ export class DataService {
   		this.getAllPizzas();
   	})
   }
+  
+  getOnePizza(pizzaId){
+    console.log('getOnePizza');
+    this._http.get('/api/pizzas/'+pizzaId)
+    .subscribe((responseData: any)=>{
+      this.singlePizzaData.next(responseData);
+    })
+  }
+
+
+
+
+
+
 }

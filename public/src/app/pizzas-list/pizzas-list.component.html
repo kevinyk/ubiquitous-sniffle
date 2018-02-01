@@ -1,5 +1,5 @@
 <fieldset>
 	<p *ngFor="let pizza of pizzas">
-		${{pizza.price}} - {{pizza.toppings}}
+		${{pizza.price}} - <a [routerLink]="['/pizzas', pizza._id]">{{pizza.toppings}}</a>
 	</p>
 </fieldset>

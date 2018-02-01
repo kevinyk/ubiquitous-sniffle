@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { DataService } from './../data.service';
 
 
+
 @Component({
   selector: 'app-pizzas-list',
   templateUrl: './pizzas-list.component.html',
@@ -13,7 +14,9 @@ export class PizzasListComponent implements OnInit {
 
   ngOnInit() {
   	this._dataService.pizzasData.subscribe((dataFromService: any)=>{
+
   		this.pizzas = dataFromService;
+      console.log(this.pizzas);
   	})
   }
 

@@ -24,5 +24,30 @@ module.exports = {
 				res.json(newPizza);
 			}
 		})
+	},
+	show: function(req,res){
+		console.log('Pizzas.show');
+		Pizza.findOne({_id: req.params.id}, function(err, foundPizza){
+			if(err){
+				console.log('something blew up');
+				res.json(err);
+			}else{
+				console.log('fresh from the oven');
+				res.json(foundPizza);
+			}
+		})
 	}
+
+
+
+
+
+
+
+
+
+
+
+
+
 }
